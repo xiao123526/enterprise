@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+//后台
+Route::group(['namespace'=>'Admin','prefix'=>'admin'],function(){
+     //后台首页
+    Route::any('/index','IndexController@index');
+    //导航栏添加视图
+    Route::any('/banner','BannerController@banner');
+});
